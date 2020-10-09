@@ -15,12 +15,12 @@ export interface RSS2TypeVersion {
 }
 export type TDocTypeVersion = AtomTypeVersion | RSSTypeVersion | RSS2TypeVersion
 
-export interface RSS2Item {
+export interface FeedItem {
 	title: string;
 	link: string;
 	description: string;
-	pubDate: string;
-	guid: string;
+  publishedAt: string;
+	id: string;
 	categories?: string[];
   author?: string;
   comments?: string;
@@ -39,8 +39,8 @@ export interface IRSS2Channel {
 	link: string;
 	description: string;
 	language?: string;
-	lastBuildDate?: string;
-	pubDate?: string;
+	updatedAt?: string;
+	publishedAt?: string;
 	copyright?: string;
 	managingEditor?: string;
 	webMaster?: string;
@@ -75,5 +75,5 @@ export interface TChannelImage {
 export interface IRSS2 {
 	version: string;
 	channel: IRSS2Channel;
-	items: RSS2Item[];
+	items: FeedItem[];
 }

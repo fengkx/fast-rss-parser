@@ -1,0 +1,68 @@
+{
+  "version": "2.0",
+  "channel": {
+    "title": "SWR2 Impuls - Wissen aktuell",
+    "link": "https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html",
+    "description": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. ",
+    "language": "de",
+    "lastBuildDate": "",
+    "pubDate": "Wed, 9 Oct 2019 16:39:00 +0200",
+    "copyright": "Copyright © Südwestrundfunk",
+    "managingEditor": "",
+    "webMaster": "",
+    "category": "",
+    "generator": "",
+    "docs": "",
+    "cloud": {
+      "domain": "",
+      "port": null,
+      "path": "",
+      "registerProcedure": "",
+      "protocol": ""
+    },
+    "ttl": null,
+    "image": {
+      "url": "https://www.swr.de/swr2/programm/Podcastbild-SWR2-Impuls,1564741489275,swr2-impuls-podcast-104~_v-16x9@2dS_-6be50a9c75559ca1aaf1d0b25bae287afdcd877a.jpg",
+      "title": "SWR2 Impuls - Wissen aktuell",
+      "link": "https://www.swr.de/swr2/programm/SWR2-Wissen-Impuls-Podcast,swr2-impuls-podcast-100.html",
+      "height": null,
+      "width": null,
+      "description": ""
+    },
+    "itunes:subtitle": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. Dazu Musik, die sich vom Mainstream abhebt. Montags bis freitags um 16:05. ",
+    "itunes:summary": "Neues aus Wissenschaft, Medizin, Umwelt und Bildung. ",
+    "itunes:author": "SWR",
+    "itunes:explicit": "No",
+    "itunes:block": "",
+    "itunes:owner": {
+      "itunes:email": "podcast@swr.de",
+      "itunes:name": "Südwestrundfunk"
+    }
+  },
+  "items": [
+    {
+      "title": "Ostafrika stellt sich auf die nächste Heuschreckenplage ein",
+      "link": "https://www.swr.de/swr2/wissen/Hungersnot-Ostafrika-stellt-sich-auf-die-naechste-Heuschreckenplage-ein,ostafrika-stellt-sich-auf-naechste-heuschreckenplage-ein-100.html",
+      "description": "Nach der jüngsten Heuschreckenplage droht Ostafrika neues Unheil. Es regnet mehr als sonst. Der feuchte Boden ist ein idealer Brutkasten für die nächste Generation Heuschrecken. Die ohnehin angespannte Ernährungslage könnte sich weiter verschlechtern.",
+      "pubDate": "Tue, 10 Mar 2020 16:05:00 +0100",
+      "guid": "c88fbba9-c228-4724-bf41-8c193b72491c",
+      "categories": [
+        "Wissen,Heuschrecken,Heuschreckenschwärme,Heuschreckenplage,Ostafrika,Natur"
+      ],
+      "author": "",
+      "comments": "",
+      "enclosure": {
+        "url": "https://avdlswr-a.akamaihd.net/swr/swr2/wissen/impuls/beitraege/2020/03/ostafrika-droht-die-naechste-heuschreckenplage.m.mp3",
+        "length": "4668354",
+        "type": "audio/mpeg"
+      },
+      "itunes:subtitle": "",
+      "itunes:summary": "",
+      "itunes:author": "",
+      "itunes:explicit": "",
+      "itunes:block": "",
+      "itunes:duration": "05:09",
+      "itunes:keywords": "Gesundheit und Mensch, Wissenschaft und Forschung, Wissen, Wissenschaft, Impuls, Podcast, Download"
+    }
+  ]
+}

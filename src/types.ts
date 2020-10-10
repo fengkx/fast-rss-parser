@@ -77,3 +77,46 @@ export interface IRSS2 {
 	channel: IRSS2Channel;
 	items: FeedItem[];
 }
+
+export interface ITunesChannel extends IRSS2Channel {
+  ['itunes:subtitle']?: string;
+  ['itunes:summary']?: string;
+  ['itunes:author']?: string;
+  ['itunes:explicit']?: string;
+  ['itunes:block']?: string;
+  ['itunes:owner']?: {
+    'itunes:email': string;
+    'itunes:name': string;
+  };
+}
+
+export interface ITunesFeedItem extends FeedItem {
+  ['itunes:subtitle']?: string;
+  ['itunes:summary']?: string;
+  ['itunes:author']?: string;
+  ['itunes:explicit']?: string;
+  ['itunes:block']?: string;
+  ['itunes:duration']?: string;
+  ['itunes:keywords']?: string; // alawys use string-join by comma ",
+}
+
+export interface ITunesRSS2 extends IRSS2 {
+  channel: ITunesChannel;
+  items: ITunesFeedItem[];
+}
+
+export interface GooglePlayChannel extends IRSS2Channel {
+  ['googleplay:owner']?: string;
+  ['googleplay:author']?: string;
+}
+
+export interface GooglePlayRSS2 extends IRSS2 {
+  channel: GooglePlayChannel;
+}
+
+export interface ITunesGoogleplayChannel extends ITunesChannel, GooglePlayChannel {}
+export interface ITunesGooglePlayFeedItem extends ITunesFeedItem {}
+export interface ITunesGooglePlayRSS2 extends IRSS2 {
+  channel: ITunesGoogleplayChannel;
+  items: ITunesGooglePlayFeedItem[];
+}

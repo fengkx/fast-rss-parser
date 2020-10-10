@@ -1,4 +1,4 @@
-import produce from 'immer'
+import { produce } from 'immer'
 
 export const rss2Tpl = {
   version: '/rss/@version',
@@ -51,18 +51,18 @@ export const rss2Tpl = {
         url: 'enclosure/@url',
         length: 'enclosure/@length',
         type: 'enclosure/@type'
-      },
+      }
       // source: 'source'
     }
   ]
 }
 
-export const itunesRsstpl = produce(rss2Tpl, (draft) => {
-  const itemTpl = draft.items[1];
-  const channelTpl = draft.channel;
-  const commonFields = ['itunes:subtitle', 'itunes:summary', 'itunes:author', 'itunes:explicit', 'itunes:block'];
+const makeItunesTpl = draft => {
+  const itemTpl = draft.items[1]
+  const channelTpl = draft.channel
+  const commonFields = ['itunes:subtitle', 'itunes:summary', 'itunes:author', 'itunes:explicit', 'itunes:block']
   commonFields.forEach(field => {
-    itemTpl[field] = field;
+    itemTpl[field] = field
     channelTpl[field] = `rss/channel/${field}`
   })
   channelTpl['itunes:owner'] = {
@@ -70,7 +70,17 @@ export const itunesRsstpl = produce(rss2Tpl, (draft) => {
     'itunes:name': 'rss/channel/itunes:owner/itunes:name'
   }
 
-  itemTpl['itunes:duration'] = 'itunes:duration';
-  itemTpl['itunes:keywords'] = 'string-join(//itunes:keywords/@text|itunes:keywords, ", ")';
+  itemTpl['itunes:duration'] = 'itunes:duration'
+  itemTpl['itunes:keywords'] = 'string-join(//itunes:keywords/@text|itunes:keywords, ", ")'
+}
+const makeGoolePlayTpl = draft => {
+  const channelTpl = draft.channel
 
-})
+  const channelField = ['googleplay:owner', 'googleplay:author']
+  channelField.forEach(field => {
+    channelTpl[field] = `rss/channel/${field}`
+  })
+}
+export const itunesRsstpl = produce(rss2Tpl, makeItunesTpl)
+export const googlePlayRSStpl = produce(rss2Tpl, makeGoolePlayTpl)
+export const itunesGooglePlayRsstpl = produce(itunesRsstpl, makeGoolePlayTpl);

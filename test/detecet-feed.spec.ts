@@ -5,7 +5,7 @@ import { RSS2TypeVersion } from '../src/types'
 
 describe('detect feed version and so on', () => {
   test('atom feed', async () => {
-    const atomStr = await readAsString(fixture('whatwg-html-commits.atom'))
+    const atomStr = await readAsString(fixture('sample-atom.atom'))
     const result = await detectFeed(atomStr)
     expect(result).toStrictEqual({ docType: 'atom' })
   })

@@ -1,0 +1,32 @@
+{
+  "version": "",
+  "channel": {
+    "title": "Example Feed",
+    "updatedAt": "2003-12-13T18:30:02Z",
+    "link": "http://example.org/",
+    "author": {
+      "name": "John Doe",
+      "email": "",
+      "uri": ""
+    },
+    "categories": [],
+    "contributor": "",
+    "generator": "",
+    "icon": "",
+    "logo": "",
+    "rights": "",
+    "subtitle": ""
+  },
+  "items": [
+    {
+      "id": "urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a",
+      "title": "Atom-Powered Robots Run Amok",
+      "description": "Some text.",
+      "publishedAt": "",
+      "content": "",
+      "link": "",
+      "categories": [],
+      "contributors": []
+    }
+  ]
+}

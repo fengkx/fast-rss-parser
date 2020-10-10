@@ -1,9 +1,10 @@
-import { parseRSS2, parseRSS2Itunes } from '../src/parse'
+import { parseAtom, parseRSS2, parseRSS2Itunes } from '../src/parse'
 import { fixture, readAsString } from './utils'
 import * as sampleRSS2JSON from './__fixture__/output/sample-rss-2.json'
 import * as itunesCategoryJSON from './__fixture__/output/itunes-category.json'
 import * as itunesKeywordsJSON from './__fixture__/output/itunes-keywords.json'
 import * as itunesKeywordsArrayJSON from './__fixture__/output/itunes-keywords-array.json'
+import * as sampleAtomJSON from './__fixture__/output/sample-atom.json'
 
 
 describe('parse feed',  () => {
@@ -35,5 +36,10 @@ describe('parse feed',  () => {
     expect(data.channel.ttl).toBeNaN()
     const newData = JSON.parse(JSON.stringify(data))
     expect(newData).toStrictEqual(itunesKeywordsArrayJSON)
+  })
+  test('sample-atom.atom', async () => {
+    const atomStr = await readAsString(fixture('sample-atom.atom'));
+    const data = await parseAtom(atomStr);
+    expect(JSON.parse(JSON.stringify(data))).toStrictEqual(sampleAtomJSON)
   })
 })

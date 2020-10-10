@@ -120,3 +120,46 @@ export interface ITunesGooglePlayRSS2 extends IRSS2 {
   channel: ITunesGoogleplayChannel;
   items: ITunesGooglePlayFeedItem[];
 }
+
+export interface AtomChannel {
+  id: string;
+  title: string;
+  updatedAt: string;
+  author?: {
+    name: string;
+    email?: string;
+    uri?: string;
+  };
+  categories?: {
+    term: string;
+    scheme?: string;
+    label?: string;
+  }[];
+  contributor?: string;
+  generator?: string;
+  icon?: string;
+  logo?: string;
+  rights?: string;
+  subtitle?: string;
+}
+
+export interface AtomFeedItem {
+  id: string;
+  title: string;
+  updatedAt: string;
+  author?: {name: string};
+  content?: string;
+  link?: string;
+  summary?: string;
+  categories?: string[];
+  contributors?: string[];
+  publishedAt?: string;
+  // ...
+}
+
+// https://validator.w3.org/feed/docs/atom.html
+export interface IAtomFeed {
+  version: string;
+  channel: AtomChannel;
+  items: AtomFeedItem[];
+}

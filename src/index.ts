@@ -1,5 +1,5 @@
 import { detectFeed } from './detect-feed'
-import { parseRSS2, parseRSS2GP, parseRSS2Itunes, parseRSS2ItunesAndGP } from './parse'
+import { parseAtom, parseRSS2, parseRSS2GP, parseRSS2Itunes, parseRSS2ItunesAndGP } from './parse'
 
 export async function parse(xml: string) {
   const docType = await detectFeed(xml)
@@ -20,7 +20,7 @@ export async function parse(xml: string) {
       throw new Error('Not Impl')
 
     case 'atom':
-      return undefined
+      return parseAtom(xml)
     default:
       throw new Error('unsupported doctype')
   }

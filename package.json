@@ -1,17 +1,23 @@
 {
   "name": "fast-rss-parser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "fast rss parser",
   "scripts": {
     "test": "npx jest --verbose --coverage",
     "lint": "xo",
     "lint:fix": "xo --fix",
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "bundle": "npx tsup src/index.ts --format cjs,esm"
   },
   "repository": {
     "url": "fengkx/fast-rss-parser",
     "type": "git"
   },
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "author": "fengkx<liangkx8237@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -20,6 +26,7 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-rem": "^4.0.0",
     "eslint-config-xo-typescript": "^0.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-typescript": "^0.14.0",
     "globby": "^11.0.1",
     "husky": "^1.2.0",
@@ -29,6 +36,7 @@
     "prettier": "^1.15.2",
     "ts-jest": "^26.4.1",
     "ts-node": "^7.0.1",
+    "tsup": "^3.7.0",
     "typescript": "^3.9.7",
     "typescript-eslint-parser": "^21.0.2",
     "xo": "^0.23.0"
@@ -75,7 +83,6 @@
   },
   "dependencies": {
     "camaro": "^6.0.4",
-    "eslint-plugin-prettier": "^3.1.4",
     "immer": "^7.0.9"
   }
 }

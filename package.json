@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "fast rss parser",
   "scripts": {
+    "test": "npx jest --verbose --coverage",
     "lint": "xo",
     "lint:fix": "xo --fix",
     "dev": "nodemon --exec ts-node src/index.ts"

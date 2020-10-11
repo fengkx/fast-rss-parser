@@ -1,7 +1,7 @@
 import globby = require('globby')
 import { detectFeed } from '../src/detect-feed'
 import { fixture, readAsString } from './utils'
-import { RSS2TypeVersion } from '../src/types'
+import { RDFTypeVersion, RSSTypeVersion } from '../src/types'
 
 describe('detect feed version and so on', () => {
   test('atom feed', async () => {
@@ -13,7 +13,7 @@ describe('detect feed version and so on', () => {
   test('rss feed', async () => {
     const rssStr = await readAsString(fixture('sample-rss-2.xml'))
     const result = await detectFeed(rssStr)
-    const expected: RSS2TypeVersion = {
+    const expected: RSSTypeVersion = {
       docType: 'rss',
       version: 2.0,
       isGooglePlay: false,
@@ -32,7 +32,7 @@ describe('detect feed version and so on', () => {
       expect(result).toHaveProperty('isItunes', true)
       expect(result).toHaveProperty('docType', 'rss')
       expect(result).toHaveProperty('version')
-      expect((result as RSS2TypeVersion).version).toBeGreaterThanOrEqual(2)
+      expect((result as RDFTypeVersion).version).toBeGreaterThanOrEqual(2)
     }
   })
 })

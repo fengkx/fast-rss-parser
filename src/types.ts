@@ -7,13 +7,11 @@ export interface RSSTypeVersion {
 	isItunes?: boolean;
 	isGooglePlay?: boolean;
 }
-export interface RSS2TypeVersion {
-	docType: 'rss';
-	version: 2;
-	isItunes: boolean;
-	isGooglePlay: boolean;
+export interface RDFTypeVersion {
+	docType: 'rdf';
+	version: 1;
 }
-export type TDocTypeVersion = AtomTypeVersion | RSSTypeVersion | RSS2TypeVersion
+export type TDocTypeVersion = AtomTypeVersion | RSSTypeVersion | RDFTypeVersion
 
 export interface FeedItem {
 	title: string;
@@ -162,4 +160,25 @@ export interface IAtomFeed {
   version: string;
   channel: AtomChannel;
   items: AtomFeedItem[];
+}
+
+export interface RdfFeedItem {
+  title: 'title';
+  link: 'link';
+  description: 'description';
+  publishedAt: 'dc:date';
+  id: 'dc:identifier|link';
+  author: 'dc:creator';
+}
+
+export interface RdfChannel {
+  title: string;
+  link: string;
+  description: string;
+}
+
+export interface IRdfFeed {
+  version: '1'|1;
+  channel: RdfChannel;
+  items: RdfFeedItem[];
 }

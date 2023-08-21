@@ -1,6 +1,6 @@
 {
   "name": "fast-rss-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fast rss parser",
   "scripts": {
     "test": "npx jest --verbose --coverage",
